@@ -4,5 +4,8 @@
         <v-img src="../public/logo-marvel.png"></v-img>
       </v-app-bar>
     </v-layout>
+    <main>
+      <slot />
+    </main>
   </template>
   
