@@ -5,7 +5,7 @@
         <br>
         <v-container class="container">
             <v-row>
-                <v-col v-for="item in characters" :key="item.id">
+                <v-col v-for="item in characters" :key="item.id" class="col">
                     <v-card width="250" height="250" elevation-19 @click="openDialog(item)" :title="item.name" class="card">
                         <v-img width="150" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
                             cover ></v-img>
@@ -51,7 +51,6 @@ const openDialog = (character) => {
     align-items: center !important;
     justify-content: center !important;
     flex-direction: column !important;
-    padding: 10px !important;
     border: solid 2px black !important;
     background-color: hsl(0, 0%, 0%) !important;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3) !important;
@@ -71,6 +70,10 @@ const openDialog = (character) => {
     align-items: justify !important;
     justify-content: justify !important;
     flex-direction: column !important;
+}
+.col{
+    padding-right: 2px !important;
+    margin: 2px;
 }
 
 </style>;
