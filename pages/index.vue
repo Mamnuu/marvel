@@ -54,6 +54,8 @@ const openDialog = (character) => {
     border: solid 2px black !important;
     background-color: hsl(0, 0%, 0%) !important;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3) !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
 }
 
 .img {
@@ -64,7 +66,8 @@ const openDialog = (character) => {
     
     font-family: "Arial Black" !important;
     color: white !important;
-
+    font-size: 16px!important;
+    font-style: oblique !important;
 }
 .container{
     align-items: justify !important;
