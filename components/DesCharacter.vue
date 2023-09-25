@@ -16,19 +16,16 @@
                     <v-col>
                         <v-card class="carddes" >
                             <ul>
-                                <li class="li"> Cantidad de comics: </li>
-                                <h2 class="li">{{ character.comics.available }}</h2>
-                                <li class="li"> Cantidad de series: </li>
-                                <h2 class="li">{{ character.series.available }}</h2>
-                                <v-row text-align="center" color="#000" v-for=" (serie, index) in character.series.items" :key="index">
+                                <li class="li">  Cantidad de comics: {{ character.comics.available }} </li> <br>
+                                <li class="li"> Cantidad de series: {{ character.series.available }} </li> <br>
+                                <v-row text-align="center" color="#000" v-for=" (serie, index) in character.series.items" :key="index"> 
                                     <v-col cols="12" v-if="index < 3">
-                                        <h2 class="li">{{ index + 1 }}. {{ serie.name }}</h2>
+                                        <h2 class="li">  {{ index + 1 }}. {{ serie.name }}</h2>
                                     </v-col>
                                 </v-row>
-                                <li class="li"> Cantidad de historias: </li>
-                                <h2 class="li">{{ character.stories.available }}</h2>
-                                <li class="li"> Cantidad de eventos: </li>
-                                <h2 class="li">{{ character.events.available }}</h2>
+                                <br>
+                                <li class="li"> Cantidad de historias: {{ character.stories.available }} </li> <br>
+                                <li class="li"> Cantidad de eventos: {{ character.events.available }} </li>
                             </ul>
                         </v-card>
                     </v-col>
@@ -74,11 +71,11 @@ export default {
     font-size: 22px !important;
     align-items:  center !important; 
     margin: auto !important; 
-    color:black
+    color:rgb(255, 253, 253)
 }
 .carddes{
-    background-color: white !important;
-    color: black !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -86,7 +83,7 @@ export default {
 }
 .li{
     font-family: "Arial Black" !important;
-    color:black !important;
+    color:rgb(255, 255, 255) !important;
     text-align: justify !important;
 }
 *::-webkit-scrollbar {

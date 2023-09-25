@@ -75,13 +75,15 @@ const openDialog = (character) => {
 
 .img {
     border-radius: 50px !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 11px !important;
+    margin-top: 1px !important;
+    padding-bottom: 2px !important;
 }
 
 * {
 
     font-family: "Arial Black" !important;
-    color: white !important;
+    color: white;
     font-size: 16px !important;
     font-style: oblique !important;
 }
