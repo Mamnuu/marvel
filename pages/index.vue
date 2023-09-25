@@ -6,11 +6,15 @@
         <v-container class="container">
             <v-row>
                 <v-col v-for="item in characters" :key="item.id" class="col">
-                    <v-card width="250" height="250" elevation-19 @click="openDialog(item)" :title="item.name" class="card">
+                    <v-card width="250" height="250" @click="openDialog(item)" :title="item.name" class="card">
                         <v-img width="150" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
                             cover ></v-img>
                     </v-card>
                 </v-col>
+                <v-dialog v-model="dialog" width="auto" style="background: none !important;">
+                        <des-character :character="currentCharacter"></des-character>
+                        <v-btn color="#000" class="btn" block @click="dialog = false">Cerrar</v-btn>
+                    </v-dialog>
             </v-row>
         </v-container>
 
@@ -19,6 +23,7 @@
 </template>
 <script setup>
 import axios from 'axios';
+import DesCharacter from '~/components/DesCharacter.vue';
 
 onBeforeMount(() => {
     getCharacters();
@@ -57,10 +62,15 @@ const openDialog = (character) => {
     padding-left: 15px !important;
     padding-right: 15px !important;
 }
+.btn{
+    font-family: "Arial Black" !important;
+    color:black !important;
+    background-color: #C40000 !important;
+}
 
 .img {
-    border-radius: 50px;
-    margin-bottom: 1px;
+    border-radius: 50px !important;
+    margin-bottom: 1px !important;
 }
 * {
     
@@ -76,7 +86,7 @@ const openDialog = (character) => {
 }
 .col{
     padding-right: 2px !important;
-    margin: 2px;
+    margin: 2px !important;
 }
 
 </style>;
