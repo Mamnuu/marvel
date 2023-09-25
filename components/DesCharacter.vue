@@ -3,7 +3,7 @@
         <v-row class="rowtitle">
             {{ character.name }}
         </v-row>
-        <v-row class="rowname">
+        <v-row>
             <v-col cols="6" style="text-align: center;">
                 <v-row>
                     <v-col>
@@ -51,9 +51,9 @@ export default {
 <style>
 
 .cardcita {
-    border-radius: 0% !important;
+    border-radius: 0px !important;
     display: flex !important;
-    width: 750px !important;
+    width: 800px !important;
     height: 450 !important; 
     align-items: "justify-content" !important;
     justify-content: center !important;
@@ -79,10 +79,33 @@ export default {
 .carddes{
     background-color: white !important;
     color: black !important;
-    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
 }
 .li{
     font-family: "Arial Black" !important;
     color:black !important;
+    text-align: justify !important;
+}
+*::-webkit-scrollbar {
+  width: 28px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px #c9c6c6;
+  border: 10px solid transparent;
+  border-radius: 40px;
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 0 10px #333;
+  border: 8px solid transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 </style>

@@ -8,13 +8,16 @@
                 <v-col v-for="item in characters" :key="item.id" class="col">
                     <v-card width="250" height="250" @click="openDialog(item)" :title="item.name" class="card">
                         <v-img width="150" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
-                            cover ></v-img>
+                            cover></v-img>
                     </v-card>
                 </v-col>
-                <v-dialog v-model="dialog" width="auto" style="background: none !important;">
+                <v-card style="border-radius: 50px !important;">
+                    <v-dialog v-model="dialog" width="auto"
+                        style="background: none !important; border-radius: 80px !important;">
                         <des-character :character="currentCharacter"></des-character>
                         <v-btn color="#000" class="btn" block @click="dialog = false">Cerrar</v-btn>
                     </v-dialog>
+                </v-card>
             </v-row>
         </v-container>
 
@@ -51,7 +54,7 @@ const openDialog = (character) => {
 </script>
 <style>
 .card {
-    border-radius: 100px !important;
+    border-radius: 80px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -62,32 +65,55 @@ const openDialog = (character) => {
     padding-left: 15px !important;
     padding-right: 15px !important;
 }
-.btn{
+
+.btn {
     font-family: "Arial Black" !important;
-    color:black !important;
+    color: black !important;
     background-color: #C40000 !important;
+
 }
 
 .img {
     border-radius: 50px !important;
     margin-bottom: 1px !important;
 }
+
 * {
-    
+
     font-family: "Arial Black" !important;
     color: white !important;
-    font-size: 16px!important;
+    font-size: 16px !important;
     font-style: oblique !important;
 }
-.container{
+
+.container {
     align-items: justify !important;
     justify-content: justify !important;
     flex-direction: column !important;
 }
-.col{
+
+.col {
     padding-right: 2px !important;
     margin: 2px !important;
 }
 
-</style>;
+*::-webkit-scrollbar {
+    width: 28px;
+    background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px #c9c6c6 !important;
+    border: 10px solid transparent !important;
+    border-radius: 40px;
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 0 10px #333 !important;
+    border: 8px solid transparent !important;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}</style>;
 
