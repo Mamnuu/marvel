@@ -5,10 +5,15 @@
         <br>
         <v-container class="container">
             <v-row>
+                <v-col v-for="n in 16" :key="n" v-if="flagload" >
+                    <v-card width="250" height="250" class="card">
+                        <div class="loader"></div>
+                    </v-card>
+                </v-col>
                 <v-col v-for="item in characters" :key="item.id" class="col">
                     <v-card width="250" height="250" @click="openDialog(item)" :title="item.name" class="card">
-                        <v-img width="150" height="170" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
-                            cover></v-img>
+                        <v-img width="150" height="170" class="img"
+                            :src="item.thumbnail.path + '.' + item.thumbnail.extension" cover></v-img>
                     </v-card>
                 </v-col>
                 <v-card style="border-radius: 50px !important;">
@@ -37,6 +42,7 @@ const HASH = "a7ad700b81bed5a917cf24d2ce28de66";
 const url = `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=${publicApiKey}&hash=${HASH}&limit=100`;
 const characters = ref([]);
 const currentCharacter = ref(null);
+const flagload= ref(true);
 
 const dialog = ref(false);
 
@@ -45,6 +51,7 @@ const getCharacters = async () => {
     characters.value = data.data.results.filter(character => {
         return !character.thumbnail.path.includes("image_not_available");
     })
+    flagload.value = false;
 
 }
 const openDialog = (character) => {
@@ -117,5 +124,25 @@ const openDialog = (character) => {
 
 *::-webkit-scrollbar-track {
     background-color: transparent !important;
-}</style>;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+</style>;
 
