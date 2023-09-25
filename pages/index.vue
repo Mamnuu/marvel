@@ -7,7 +7,7 @@
             <v-row>
                 <v-col v-for="item in characters" :key="item.id" class="col">
                     <v-card width="250" height="250" @click="openDialog(item)" :title="item.name" class="card">
-                        <v-img width="150" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
+                        <v-img width="150" height="170" class="img" :src="item.thumbnail.path + '.' + item.thumbnail.extension"
                             cover></v-img>
                     </v-card>
                 </v-col>
